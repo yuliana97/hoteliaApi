@@ -3,8 +3,7 @@ const mongoose =require('mongoose')
 //Conexion
 
 const conexionBD =async ()=>{
-    const url= `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.mbdmpfs.
-    mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+    const url= `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.mbdmpfs.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
     try {
         const DB =await mongoose.connect(url);
@@ -14,4 +13,4 @@ const conexionBD =async ()=>{
     }
 }
 //para dejar disponible este modulo
-modelu.exports = conexionBD;
+module.exports = conexionBD;
